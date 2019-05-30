@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./js/zoomsl-3.0.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <!-- Place somewhere in the <body> of your page -->
+                    <div id="slider" class="flexslider">
+                            <ul class="slides">
+                            <li>
+                                <img class="demo jshop_img_thumb" src="./images/image1.jpg" />
+                            </li>
+                            <li>
+                                <img class="demo jshop_img_thumb" src="./images/image2.jpg" />
+                            </li>
+                            <li>
+                                <img class="demo jshop_img_thumb" src="./images/image3.jpg" />
+                            </li>
+                            <li>
+                                <img class="demo jshop_img_thumb" src="./images/image4.jpg" />
+                            </li>
+                            <!-- items mirrored twice, total of 12 -->
+                            </ul>
+                    </div>
+                    <div id="carousel" class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="./images/image1.jpg" />
+                            </li>
+                            <li>
+                                <img src="./images/image2.jpg" />
+                            </li>
+                            <li>
+                                <img src="./images/image3.jpg" />
+                            </li>
+                            <li>
+                                <img src="./images/image4.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    fasfsfd
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#carousel').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    itemWidth: 210,
+                    itemMargin: 5,
+                    asNavFor: '#slider'
+                });
+                
+                $('#slider').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    sync: "#carousel"
+                });
+            });
+
+            jQuery(function(){
+                $('.demo').imagezoomsl({ 
+                    zoomrange: [2, 12],
+                    magnifiersize: [640, 480],
+                    scrollspeedanimate: 10,
+                    loopspeedanimate: 5,
+                    cursorshadeborder: "2px solid black",
+                    magnifiereffectanimate: "slideIn"
+                });  
+            });
+        </script>
+    </body>
+</html>
